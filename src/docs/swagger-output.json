@@ -306,14 +306,6 @@
       }
     },
     "/api/v1/likes/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
       "post": {
         "description": "",
         "responses": {
