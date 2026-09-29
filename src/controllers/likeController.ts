@@ -4,11 +4,6 @@ import { LikeService } from '../services/likeService.ts';
 export class LikeController {
   constructor(private readonly service = new LikeService()) {}
 
-  getAll = async (_req: Request, res: Response): Promise<Response> => {
-    try { return res.status(200).json({ status: 'success', data: await this.service.getLikes() }); }
-    catch (error) { return this.handleError(res, error); }
-  };
-
   create = async (req: Request, res: Response): Promise<Response> => {
     const { reviewId, userId } = req.body ?? {};
     if (!Number.isInteger(reviewId) || reviewId < 1 || !Number.isInteger(userId) || userId < 1) {
